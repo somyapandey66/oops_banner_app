@@ -1,0 +1,30 @@
+class CharacterPattern {
+
+    char ch;
+    int rows;
+
+    // Constructor
+    CharacterPattern(char ch, int rows) {
+        this.ch = ch;
+        this.rows = rows;
+    }
+
+    // Method to print pattern
+    void printPattern() {
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        CharacterPattern obj = new CharacterPattern('*', 5);
+
+        obj.printPattern();
+    }
+}
