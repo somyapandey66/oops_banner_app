@@ -1,0 +1,35 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class CharacterPatternMap {
+
+    // Function to render pattern
+    public static void renderPattern(char ch, int rows) {
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Map to store pattern name and character
+        Map<String, Character> patternMap = new HashMap<>();
+
+        patternMap.put("Star Pattern", '*');
+        patternMap.put("Hash Pattern", '#');
+        patternMap.put("Dollar Pattern", '$');
+
+        int rows = 5;
+
+        // Render patterns from Map
+        for (Map.Entry<String, Character> entry : patternMap.entrySet()) {
+
+            System.out.println("\n" + entry.getKey());
+            renderPattern(entry.getValue(), rows);
+
+        }
+    }
+}
